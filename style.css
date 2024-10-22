@@ -14,9 +14,10 @@ body, html {
 }
 
 #containerPlanets{
+    pointer-events: none;
     position: fixed;
     inset: 0;
-    z-index: 101; 
+    z-index: 102; 
 }
 
 .nav {
@@ -138,6 +139,7 @@ body, html {
 }
 
 .explanation {
+    z-index: 101;
     width: 50%;
     display: flex;
     justify-content: center;
