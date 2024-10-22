@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;800&display=swap" rel="stylesheet">
         <script type="module" src="/main.js" defer></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrambleTextPlugin.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -29,7 +31,13 @@
 			<div class="home">
 				<h1>Unveil the wonders of the universe one question at a time</h1>
 				<p>This website is designed for educational purposes, providing an interactive way to explore the wonders of astronomy. Feel free to experiment with our 3D models—zoom in, drag, and rotate to get a closer look at celestial objects. AstronomyTest is also a platform to help you sharpen your astronomy knowledge and skills while experiencing the use of 3D objects in a digital space. Enjoy learning and exploring the universe in a whole new dimension!</p>
-				<p class="buttonStart"><span>START</span></p>
+				<p class="buttonStart">START</p>
+			</div>
+			<div class="orderPlanets" id="orderPlanets">
+				<div class="explanation">
+					<p>We all know the planets follow a specific order, but have you ever wondered why? This order is based on their distance from the Sun, from closest to farthest—but how well do you know this ranking?</p>
+				</div>
+				<div id="containerPlanets"></div>
 			</div>
 		</div>
 		<div id="container3D"></div>

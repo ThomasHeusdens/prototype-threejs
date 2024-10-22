@@ -13,6 +13,12 @@ body, html {
     pointer-events: none;
 }
 
+#containerPlanets{
+    position: fixed;
+    inset: 0;
+    z-index: 101; 
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -120,6 +126,42 @@ body, html {
 }
 
 .home p.buttonStart:hover{
+    cursor: pointer;
+    background-color: rgb(11, 11, 51);
+    border: rgb(11, 11, 51) 2px solid;
+}
+
+.orderPlanets{
+    display: none;
+    margin: 0 120px;
+    justify-content: center;
+}
+
+.explanation {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explanation p{
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.explanation p.buttonConfirm{
+    width: auto;
+    margin-top: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: white 2px solid;
+    border-radius: 50px;    
+    display: inline-block;
+}
+
+.explanation p.buttonConfirm:hover{
     cursor: pointer;
     background-color: rgb(11, 11, 51);
     border: rgb(11, 11, 51) 2px solid;
