@@ -3,12 +3,35 @@
 	<head>
 		<meta charset="utf-8">
 		<title>My first three.js app</title>
-		<style>
-			body { margin: 0; }
-		</style>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;800&display=swap" rel="stylesheet">
         <script type="module" src="/main.js" defer></script>
 	</head>
 	<body>
-		
+		<div class="container">
+			<div class="nav">
+				<img src="assets/background.png" alt="">
+				<div class="logo">
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 42 42">
+						<path id="Icon_ion-ios-world-outline" data-name="Icon ion-ios-world-outline" d="M24.375,3.375h-.05a21,21,0,0,0,0,42h.05a21,21,0,0,0,0-42Zm.838,12.57a31.133,31.133,0,0,0,6.482-.858,37.681,37.681,0,0,1,1.08,8.461H25.213v-7.6Zm0-1.686V5.192c2.262.626,4.563,3.645,6.017,8.279a29.482,29.482,0,0,1-6.017.788ZM23.537,5.172v9.1a29.194,29.194,0,0,1-6.068-.808C18.943,8.8,21.255,5.758,23.537,5.172Zm0,10.773v7.592H15.925A37.681,37.681,0,0,1,17,15.076a31.62,31.62,0,0,0,6.532.868Zm-9.309,7.592H5.081A19.2,19.2,0,0,1,9.453,12.128a30.53,30.53,0,0,0,5.937,2.5A39.61,39.61,0,0,0,14.228,23.537Zm0,1.676a39.131,39.131,0,0,0,1.151,8.9,31.44,31.44,0,0,0-5.937,2.5A19.26,19.26,0,0,1,5.071,25.213Zm1.7,0h7.612V32.8A30.953,30.953,0,0,0,17,33.674a37.681,37.681,0,0,1-1.08-8.461Zm7.612,9.268v9.107c-2.282-.6-4.594-3.625-6.068-8.289A28.536,28.536,0,0,1,23.537,34.481Zm1.676,9.076V34.471a29.678,29.678,0,0,1,6.027.8C29.776,39.913,27.485,42.932,25.213,43.558Zm0-10.763V25.213h7.562a37.665,37.665,0,0,1-1.08,8.45A31.137,31.137,0,0,0,25.213,32.8Zm9.248-7.582h9.208A19.22,19.22,0,0,1,39.3,36.622,31.047,31.047,0,0,0,33.31,34.1a38.95,38.95,0,0,0,1.151-8.885Zm0-1.676a39.63,39.63,0,0,0-1.141-8.895A31.291,31.291,0,0,0,39.3,12.128a19.2,19.2,0,0,1,4.372,11.419H34.461Zm3.685-12.7a29.2,29.2,0,0,1-5.28,2.181,18.887,18.887,0,0,0-3.988-7.431A19.418,19.418,0,0,1,38.146,10.836ZM19.812,5.606a18.676,18.676,0,0,0-3.968,7.4,28.683,28.683,0,0,1-5.23-2.171,19.2,19.2,0,0,1,9.2-5.23ZM10.6,37.9a28.982,28.982,0,0,1,5.23-2.171,18.858,18.858,0,0,0,3.978,7.411A19.21,19.21,0,0,1,10.6,37.9Zm18.274,5.26a18.869,18.869,0,0,0,4-7.441,29.2,29.2,0,0,1,5.28,2.181A19.384,19.384,0,0,1,28.878,43.164Z" transform="translate(-3.375 -3.375)" fill="#fff"/>
+					  </svg>
+					<h1>ASTRONOMY<span>TEST</span></h1> 
+				</div>	
+				<div class="menu">
+					<p>PLANETS</p>
+					<p>BLOG</p>
+					<p>ABOUT US</p>
+				</div>	
+				<div class="contact">
+					<p>CONTACT ME</p>
+				</div>	  
+			</div>
+			<div class="home">
+				<h1>Unveil the wonders of the universe one question at a time</h1>
+				<p>This website is designed for educational purposes, providing an interactive way to explore the wonders of astronomy. Feel free to experiment with our 3D models—zoom in, drag, and rotate to get a closer look at celestial objects. AstronomyTest is also a platform to help you sharpen your astronomy knowledge and skills while experiencing the use of 3D objects in a digital space. Enjoy learning and exploring the universe in a whole new dimension!</p>
+				<p class="buttonStart"><span>START</span></p>
+			</div>
+		</div>
+		<div id="container3D"></div>
 	</body>
 </html>
