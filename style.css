@@ -136,6 +136,8 @@ body, html {
     display: none;
     margin: 0 120px;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .explanation {
@@ -167,4 +169,47 @@ body, html {
     cursor: pointer;
     background-color: rgb(11, 11, 51);
     border: rgb(11, 11, 51) 2px solid;
+}
+
+.answerNamePlanets{
+    margin: 175px 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.firstRow, .secondRow{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.secondRow{
+    margin-top: 150px;
+}
+
+#planet{
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: white solid 1px;
+    padding-bottom: 5px;
+    color: white;
+    width: 150px;
+    outline: none;
+}
+
+.qna{
+    margin: 0 120px;
+}
+
+.explanationMessage{
+    display: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+.message{
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
 }
