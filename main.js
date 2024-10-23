@@ -68,6 +68,11 @@ let arrPositionModel = [
         id: 'orderPlanetsGood',
         position: { x: 4, y: -2.5, z: -30 },
         rotation: { x: 0, y: -0.3, z: 0 }
+    },
+    {
+        id: 'startTest',
+        position: { x: -5, y: -3.7, z: -30 },
+        rotation: { x: 0, y: 0.8, z: 0 }
     }
 ];
 
@@ -216,7 +221,7 @@ document.querySelector('.buttonStart').addEventListener('click', () => {
     }
 });
 
-const planetsInput = document.querySelectorAll('input[type="text"]');
+const planetsInput = document.querySelectorAll('.planet');
 const planetsDiv = document.querySelector('.orderPlanets');
 
 function checkAllCorrect() {
@@ -271,4 +276,34 @@ planetsInput.forEach(planet => {
         }
     });
 });
+
+const modelThirdMove = () => {
+    let findId = arrPositionModel.findIndex((val) => val.id == 'startTest');
+    let newCoordinates = arrPositionModel[findId];
+    gsap.to(astronaut.position, {
+        x: newCoordinates.position.x,
+        y: newCoordinates.position.y,
+        z: newCoordinates.position.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+    gsap.to(astronaut.rotation, {
+        x: newCoordinates.rotation.x,
+        y: newCoordinates.rotation.y,
+        z: newCoordinates.rotation.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+};
+
+document.querySelector('.buttonOk').addEventListener('click', () => {
+    document.querySelector('.explanationMessage').style.display = "none";
+    modelThirdMove();
+    document.querySelector('.numberQuestion').style.display = "block";
+    document.querySelector('.firstQuestion').style.display = "flex";
+})
+
+document.querySelector('.confirmFirstQuestion').addEventListener('click', () => {
+    
+})
 

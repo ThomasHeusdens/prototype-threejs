@@ -187,7 +187,7 @@ body, html {
     margin-top: 150px;
 }
 
-#planet{
+.planet{
     text-align: center;
     background-color: transparent;
     border: none;
@@ -200,16 +200,88 @@ body, html {
 
 .qna{
     margin: 0 120px;
+    display: flex;
+    justify-content: center;
 }
 
 .explanationMessage{
     display: none;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: column;
+    width: 35%;
 }
 
 .message{
     color: white;
     font-size: 15px;
     font-weight: 300;
+}
+
+p.buttonOk{
+    color: white;
+    width: auto;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: white 2px solid;
+    border-radius: 50px;    
+    display: inline-block;
+}
+
+p.buttonOk:hover{
+    cursor: pointer;
+    background-color: rgb(11, 11, 51);
+    border: rgb(11, 11, 51) 2px solid;
+}
+
+.numberQuestion{
+    display: none;
+    position: absolute;
+}
+
+.firstQuestion{
+    display: none;
+    width: 50%;
+    flex-direction: column;
+}
+
+.firstQuestion p{
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#questionInput{
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: white solid 1px;
+    padding-bottom: 5px;
+    color: white;
+    width: 150px;
+    outline: none;
+}
+
+p.confirmFirstQuestion{
+    color: white;
+    width: auto;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: white 2px solid;
+    border-radius: 50px;    
+    display: inline-block;
+}
+
+p.confirmFirstQuestion:hover{
+    cursor: pointer;
+    background-color: rgb(11, 11, 51);
+    border: rgb(11, 11, 51) 2px solid;
+}
+
+.answer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
