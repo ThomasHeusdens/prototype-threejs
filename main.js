@@ -73,6 +73,26 @@ let arrPositionModel = [
         id: 'startTest',
         position: { x: -5, y: -3.7, z: -30 },
         rotation: { x: 0, y: 0.8, z: 0 }
+    },
+    {
+        id: 'firstFlip',
+        position: { x: -5, y: -3.7, z: -30 },
+        rotation: { x: 0, y: 7, z: 0 }
+    },
+    {
+        id: 'secondFlip',
+        position: { x: -5, y: -3.7, z: -30 },
+        rotation: { x: 0, y: 0.8, z: 0 }
+    },
+    {
+        id: 'thirdFlip',
+        position: { x: -5, y: -3.7, z: -30 },
+        rotation: { x: 0, y: 7, z: 0 }
+    },
+    {
+        id: 'questionsDone',
+        position: { x: 4.5, y: -2.5, z: -30 },
+        rotation: { x: 0, y: 5.8, z: 0 }
     }
 ];
 
@@ -257,7 +277,7 @@ const modelSecondMove = () => {
 planetsInput.forEach(planet => {
     planet.addEventListener('input', function() {
         const correctPlanetName = planet.getAttribute('name');
-        if (planet.value.trim().toLowerCase() === correctPlanetName.toLowerCase()) {
+        if (planet.value.trim().toLowerCase() == correctPlanetName.toLowerCase()) {
             planet.style.borderBottom = "1px solid green";
         }
 
@@ -299,11 +319,196 @@ const modelThirdMove = () => {
 document.querySelector('.buttonOk').addEventListener('click', () => {
     document.querySelector('.explanationMessage').style.display = "none";
     modelThirdMove();
-    document.querySelector('.numberQuestion').style.display = "block";
+    document.querySelector('.numberQuestion').style.display = "flex";
     document.querySelector('.firstQuestion').style.display = "flex";
 })
 
-document.querySelector('.confirmFirstQuestion').addEventListener('click', () => {
-    
-})
+const modelFourthMove = () => {
+    let findId = arrPositionModel.findIndex((val) => val.id == 'firstFlip');
+    let newCoordinates = arrPositionModel[findId];
+    gsap.to(astronaut.position, {
+        x: newCoordinates.position.x,
+        y: newCoordinates.position.y,
+        z: newCoordinates.position.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+    gsap.to(astronaut.rotation, {
+        x: newCoordinates.rotation.x,
+        y: newCoordinates.rotation.y,
+        z: newCoordinates.rotation.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+};
 
+document.querySelector('.confirmFirstQuestion').addEventListener('click', () => {
+    const answerFirstQuestion = document.getElementById('questionFirstInput');
+    if(answerFirstQuestion.value.trim().toLowerCase() == answerFirstQuestion.getAttribute('name').toLowerCase()){
+        document.querySelector('.firstQuestion').style.display = "none";
+        document.querySelector('.secondQuestion').style.display = "flex";
+        modelFourthMove();
+    } else {
+        answerFirstQuestion.style.borderBottom = "1px solid red";
+    }
+});
+
+const modelFifthMove = () => {
+    let findId = arrPositionModel.findIndex((val) => val.id == 'secondFlip');
+    let newCoordinates = arrPositionModel[findId];
+    gsap.to(astronaut.position, {
+        x: newCoordinates.position.x,
+        y: newCoordinates.position.y,
+        z: newCoordinates.position.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+    gsap.to(astronaut.rotation, {
+        x: newCoordinates.rotation.x,
+        y: newCoordinates.rotation.y,
+        z: newCoordinates.rotation.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+};
+
+document.querySelector('.confirmSecondQuestion').addEventListener('click', () => {
+    const answerSecondQuestion = document.getElementById('questionSecondInput');
+    if(answerSecondQuestion.value.trim().toLowerCase() == answerSecondQuestion.getAttribute('name').toLowerCase()){
+        document.querySelector('.secondQuestion').style.display = "none";
+        document.querySelector('.thirdQuestion').style.display = "flex";
+        modelFifthMove();
+    } else {
+        answerSecondQuestion.style.borderBottom = "1px solid red";
+    }
+});
+
+const modelSixthMove = () => {
+    let findId = arrPositionModel.findIndex((val) => val.id == 'thirdFlip');
+    let newCoordinates = arrPositionModel[findId];
+    gsap.to(astronaut.position, {
+        x: newCoordinates.position.x,
+        y: newCoordinates.position.y,
+        z: newCoordinates.position.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+    gsap.to(astronaut.rotation, {
+        x: newCoordinates.rotation.x,
+        y: newCoordinates.rotation.y,
+        z: newCoordinates.rotation.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+};
+
+document.querySelector('.confirmThirdQuestion').addEventListener('click', () => {
+    const answerThirdQuestion = document.getElementById('questionThirdInput');
+    if(answerThirdQuestion.value.trim().toLowerCase() == answerThirdQuestion.getAttribute('name').toLowerCase()){
+        document.querySelector('.thirdQuestion').style.display = "none";
+        document.querySelector('.fourthQuestion').style.display = "flex";
+        modelSixthMove();
+    } else {
+        answerThirdQuestion.style.borderBottom = "1px solid red";
+    }
+});
+
+const modelSeventhMove = () => {
+    let findId = arrPositionModel.findIndex((val) => val.id == 'questionsDone');
+    let newCoordinates = arrPositionModel[findId];
+    gsap.to(astronaut.position, {
+        x: newCoordinates.position.x,
+        y: newCoordinates.position.y,
+        z: newCoordinates.position.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+    gsap.to(astronaut.rotation, {
+        x: newCoordinates.rotation.x,
+        y: newCoordinates.rotation.y,
+        z: newCoordinates.rotation.z,
+        duration: 2,
+        ease: 'power1.out'
+    });
+};
+
+const starSketch = (p) => {
+  const numStars = 500;
+  let stars = [];
+
+  p.setup = function() {
+    p.createCanvas(p.windowWidth, p.windowHeight);
+    p.stroke(255);
+    p.strokeWeight(2);
+    
+    for(let i = 0; i < numStars; i++) {
+      stars.push(new Star(p.random(p.width), p.random(p.height)));
+    }
+  }
+
+  p.draw = function() {
+    p.background(0, 50);
+    
+    const acc = p.map(p.mouseX, 0, p.width, 0.005, 0.2);
+    
+    stars = stars.filter(star => {
+      star.draw();
+      star.update(acc);
+      return star.isActive();
+    });
+    
+    while(stars.length < numStars) {
+      stars.push(new Star(p.random(p.width), p.random(p.height)));
+    }
+  }
+
+  class Star {
+    constructor(x, y) {
+      this.pos = p.createVector(x, y);
+      this.prevPos = p.createVector(x, y);
+      this.vel = p.createVector(0, 0);
+      this.ang = p.atan2(y - (p.height / 2), x - (p.width / 2));
+    }
+  
+    isActive() {
+      return onScreen(this.prevPos.x, this.prevPos.y);
+    }
+  
+    update(acc) {
+      this.vel.x += p.cos(this.ang) * acc;
+      this.vel.y += p.sin(this.ang) * acc;
+      this.prevPos.x = this.pos.x;
+      this.prevPos.y = this.pos.y;
+      this.pos.x += this.vel.x;
+      this.pos.y += this.vel.y;
+    }
+  
+    draw() {
+      const alpha = p.map(this.vel.mag(), 0, 3, 0, 255);
+      p.stroke(255, alpha);
+      p.line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
+    }
+  }
+
+  function onScreen(x, y) {
+    return x >= 0 && x <= p.width && y >= 0 && y <= p.height;
+  }
+
+  p.windowResized = function() {
+    p.resizeCanvas(p.windowWidth, p.windowHeight);
+  }
+};
+
+
+document.querySelector('.confirmFourthQuestion').addEventListener('click', () => {
+    const answerThirdQuestion = document.getElementById('questionFourthInput');
+    if(answerThirdQuestion.value.trim().toLowerCase() == answerThirdQuestion.getAttribute('name').toLowerCase()){
+        document.querySelector('.fourthQuestion').style.display = "none";
+        document.querySelector('.numberQuestion').style.display = "none";
+        modelSeventhMove();
+        document.getElementById('p5-canvas-container').style.display = 'block';
+        new p5(starSketch, document.getElementById('p5-canvas-container'));
+    } else {
+        answerThirdQuestion.style.borderBottom = "1px solid red";
+    }
+});

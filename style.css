@@ -239,19 +239,19 @@ p.buttonOk:hover{
     position: absolute;
 }
 
-.firstQuestion{
+.firstQuestion, .secondQuestion, .thirdQuestion, .fourthQuestion{
     display: none;
     width: 50%;
     flex-direction: column;
 }
 
-.firstQuestion p{
+.firstQuestion p, .secondQuestion p, .thirdQuestion p, .fourthQuestion p{
     color: white;
     font-size: 15px;
     font-weight: 300;
 }
 
-#questionInput{
+#questionFirstInput, #questionSecondInput, #questionThirdInput, #questionFourthInput{
     text-align: center;
     background-color: transparent;
     border: none;
@@ -274,6 +274,57 @@ p.confirmFirstQuestion{
 }
 
 p.confirmFirstQuestion:hover{
+    cursor: pointer;
+    background-color: rgb(11, 11, 51);
+    border: rgb(11, 11, 51) 2px solid;
+}
+
+p.confirmSecondQuestion{
+    color: white;
+    width: auto;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: white 2px solid;
+    border-radius: 50px;    
+    display: inline-block;
+}
+
+p.confirmSecondQuestion:hover{
+    cursor: pointer;
+    background-color: rgb(11, 11, 51);
+    border: rgb(11, 11, 51) 2px solid;
+}
+
+p.confirmThirdQuestion{
+    color: white;
+    width: auto;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: white 2px solid;
+    border-radius: 50px;    
+    display: inline-block;
+}
+
+p.confirmThirdQuestion:hover{
+    cursor: pointer;
+    background-color: rgb(11, 11, 51);
+    border: rgb(11, 11, 51) 2px solid;
+}
+
+p.confirmFourthQuestion{
+    color: white;
+    width: auto;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: white 2px solid;
+    border-radius: 50px;    
+    display: inline-block;
+}
+
+p.confirmFourthQuestion:hover{
     cursor: pointer;
     background-color: rgb(11, 11, 51);
     border: rgb(11, 11, 51) 2px solid;

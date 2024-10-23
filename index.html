@@ -8,6 +8,7 @@
         <script type="module" src="/main.js" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrambleTextPlugin.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -21,7 +22,7 @@
 				</div>	
 				<div class="menu">
 					<p>PLANETS</p>
-					<p>BLOG</p>
+					<p>HOME</p>
 					<p>ABOUT US</p>
 				</div>	
 				<div class="contact">
@@ -70,10 +71,33 @@
 				<div class="firstQuestion">
 					<p class="question">Light travels incredibly fast through space, but do you know the approximative speed? Enter the speed of light in kilometers per second.</p>
 					<div class="answer">
-						<input type="text" name="300000" id="questionInput" placeholder="Ex. 2000">
+						<input type="text" name="300000" id="questionFirstInput" placeholder="Ex. 2000">
 						<p class="confirmFirstQuestion">CONFIRM</p>
 					</div>
 				</div>
+				<div class="secondQuestion">
+					<p class="question">Stars are grouped into galaxies, and we live in one of them. What is the name of the galaxy that contains our Solar System?</p>
+					<div class="answer">
+						<input type="text" name="The Milky Way" id="questionSecondInput" placeholder="Ex. Andromeda">
+						<p class="confirmSecondQuestion">CONFIRM</p>
+					</div>
+				</div>
+				<div class="thirdQuestion">
+					<p class="question">The universe is incredibly old. Can you guess how many billion years old it is?</p>
+					<div class="answer">
+						<input type="text" name="13.7" id="questionThirdInput" placeholder="Ex. 5.3">
+						<p class="confirmThirdQuestion">CONFIRM</p>
+					</div>
+				</div>
+				<div class="fourthQuestion">
+					<p class="question">Besides the Sun, there is a star that is the closest to Earth. What is the name of this nearest star?</p>
+					<div class="answer">
+						<input type="text" name="Proxima Centauri" id="questionFourthInput" placeholder="Ex. Sirius">
+						<p class="confirmFourthQuestion">CONFIRM</p>
+					</div>
+				</div>
+			</div>
+			<div id="p5-canvas-container" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; display: none;">
 			</div>
 		</div>
 		<div id="container3D"></div>

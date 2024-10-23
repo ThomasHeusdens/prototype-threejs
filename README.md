@@ -7,7 +7,8 @@ Model Mars: https://sketchfab.com/3d-models/mars-the-red-planet-free-7cf3b31ca60
 Model Jupiter: https://sketchfab.com/3d-models/jupiter-free-downloadable-model-61671f29ca0a4fa39dc9653290282418
 Model Saturn: https://sketchfab.com/3d-models/saturn-planet-9ab1eb3bb97f4e4a9305c0aae2d280a6
 Model Uranus: https://sketchfab.com/3d-models/space-object-003-gas-giant-e336177e42994065802a874fe79546eb
-Model Neptunus: 
+Model Neptunus: https://sketchfab.com/3d-models/gas-giant-blue-6df8616351a94ec598da8f57cf1b8b81#download
+Model Solar System: https://sketchfab.com/3d-models/orrery-44849150982d4c228fca951a66df604f
+LightSpeed effect: https://www.youtube.com/watch?v=p0I5bNVcYP8&ab_channel=BarneyCodes
 Display Astronaut: https://www.youtube.com/watch?v=zNXQS2DfckU&ab_channel=LunDev
 Move in a scene (zoom and rotate): https://www.youtube.com/watch?v=vuA3qG15JfI&ab_channel=FunOfHeuristic
-scramble Text: https://gsap.com/docs/v3/Plugins/ScrambleTextPlugin/
