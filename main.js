@@ -246,20 +246,6 @@ document.querySelector('.buttonStart').addEventListener('click', () => {
     }
 });
 
-const planetsInput = document.querySelectorAll('.planet');
-const planetsDiv = document.querySelector('.orderPlanets');
-
-function checkAllCorrect() {
-    let allCorrect = true;
-    planetsInput.forEach(planet => {
-        const correctPlanetName = planet.getAttribute('name');
-        if (planet.value.trim().toLowerCase() !== correctPlanetName.toLowerCase()) {
-            allCorrect = false;
-        }
-    });
-    return allCorrect;
-}
-
 const modelSecondMove = () => {
     let findId = arrPositionModel.findIndex((val) => val.id == 'orderPlanetsGood');
     let newCoordinates = arrPositionModel[findId];
@@ -278,12 +264,28 @@ const modelSecondMove = () => {
         ease: 'power1.out'
     });
 };
+
+const planetsInput = document.querySelectorAll('.planet');
+const planetsDiv = document.querySelector('.orderPlanets');
+
+function checkAllCorrect() {
+    let allCorrect = true;
+    planetsInput.forEach(planet => {
+        const correctPlanetName = planet.getAttribute('name');
+        if (planet.value.trim().toLowerCase() !== correctPlanetName.toLowerCase()) {
+            allCorrect = false;
+        }
+    });
+    return allCorrect;
+}
     
 planetsInput.forEach(planet => {
     planet.addEventListener('input', function() {
         const correctPlanetName = planet.getAttribute('name');
         if (planet.value.trim().toLowerCase() == correctPlanetName.toLowerCase()) {
             planet.style.borderBottom = "1px solid green";
+        } else {
+            planet.style.borderBottom = "1px solid white";
         }
 
         if(checkAllCorrect()){
@@ -324,7 +326,7 @@ const modelThirdMove = () => {
 document.querySelector('.buttonOk').addEventListener('click', () => {
     document.querySelector('.explanationMessage').style.display = "none";
     modelThirdMove();
-    document.querySelector('.numberQuestion').style.display = "flex";
+    document.querySelector('.numberQuestion').style.display = "block";
     document.querySelector('.firstQuestion').style.display = "flex";
 })
 
@@ -352,6 +354,7 @@ document.querySelector('.confirmFirstQuestion').addEventListener('click', () => 
     if(answerFirstQuestion.value.trim().toLowerCase() == answerFirstQuestion.getAttribute('name').toLowerCase()){
         document.querySelector('.firstQuestion').style.display = "none";
         document.querySelector('.secondQuestion').style.display = "flex";
+        document.querySelector('.numberQuestion p').textContent = "2."
         modelFourthMove();
     } else {
         answerFirstQuestion.style.borderBottom = "1px solid red";
@@ -382,6 +385,7 @@ document.querySelector('.confirmSecondQuestion').addEventListener('click', () =>
     if(answerSecondQuestion.value.trim().toLowerCase() == answerSecondQuestion.getAttribute('name').toLowerCase()){
         document.querySelector('.secondQuestion').style.display = "none";
         document.querySelector('.thirdQuestion').style.display = "flex";
+        document.querySelector('.numberQuestion p').textContent = "3."
         modelFifthMove();
     } else {
         answerSecondQuestion.style.borderBottom = "1px solid red";
@@ -412,6 +416,7 @@ document.querySelector('.confirmThirdQuestion').addEventListener('click', () => 
     if(answerThirdQuestion.value.trim().toLowerCase() == answerThirdQuestion.getAttribute('name').toLowerCase()){
         document.querySelector('.thirdQuestion').style.display = "none";
         document.querySelector('.fourthQuestion').style.display = "flex";
+        document.querySelector('.numberQuestion p').textContent = "4."
         modelSixthMove();
     } else {
         answerThirdQuestion.style.borderBottom = "1px solid red";
@@ -484,7 +489,12 @@ const starSketch = (p) => {
 
         document.getElementById('p5-canvas-container').style.display = 'none';
         document.querySelector('#container3D').style.pointerEvents = "all";
-    }, 10500);
+        document.querySelector('.nav').style.display = "none";
+        document.querySelector('.structureExplanation').style.display = "flex";
+        setTimeout(() => {
+            document.querySelector('.structureExplanation').style.display = "none";
+        }, 10000);
+    }, 10100);
     setTimeout(() => {
         astronaut.visible = false;
     }, 10000);

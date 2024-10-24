@@ -1,4 +1,5 @@
 # Prototype Three.JS
+ThreeJS installation: https://threejs.org/docs/index.html#manual/en/introduction/Installation
 Model Astronaut: https://sketchfab.com/3d-models/astronaut-swimming-229a75e6a3564b7b8163059862a4ae14
 Model Mercury: https://sketchfab.com/3d-models/mercury-0a7a8958d49944f1aef057951daa8fd3
 Model Venus: https://sketchfab.com/3d-models/venus-3fc4363f27f8470d9225048845c53599
@@ -14,3 +15,4 @@ Display Astronaut: https://www.youtube.com/watch?v=zNXQS2DfckU&ab_channel=LunDev
 Move in a scene (zoom and rotate): https://www.youtube.com/watch?v=vuA3qG15JfI&ab_channel=FunOfHeuristic
 OrbitControls: https://threejs.org/docs/#examples/en/controls/OrbitControls
 Rotate and zoom in only for the group: https://threejs.org/docs/#api/en/objects/Group
+Autocomplete off: https://gist.github.com/niksumeiko/360164708c3b326bd1c8?permalink_comment_id=3793032
