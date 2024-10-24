@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { DragControls } from 'three/addons/controls/DragControls.js';
 
 import { gsap } from 'gsap';
 
@@ -26,8 +25,8 @@ const topLight = new THREE.DirectionalLight(0xffffff, 1);
 topLight.position.set(500, 500, 500);
 scene.add(topLight);
 
-let astronaut, mercury, venus, earth, mars, jupiter, saturn, uranus, neptunus;
-let mixerAstronaut, mixerMercury, mixerVenus, mixerEarth, mixerMars, mixerJupiter, mixerSaturn, mixerUranus, mixerNeptunus;
+let astronaut, mercury, venus, earth, mars, jupiter, saturn, uranus, neptunus, solarSystem;
+let mixerAstronaut, mixerMercury, mixerVenus, mixerEarth, mixerMars, mixerJupiter, mixerSaturn, mixerUranus, mixerNeptunus, mixerSolarSystem;
 const loader = new GLTFLoader();
 
 loader.load('assets/astronaut_swimming.glb', function (gltf) {
@@ -55,6 +54,7 @@ const reRender3D = () => {
     if (mixerSaturn) mixerSaturn.update(0.01);
     if (mixerUranus) mixerUranus.update(0.001);
     if (mixerNeptunus) mixerNeptunus.update(0.001);
+    if (mixerSolarSystem) mixerSolarSystem.update(0.001);
 };
 reRender3D();
 
@@ -93,6 +93,11 @@ let arrPositionModel = [
         id: 'questionsDone',
         position: { x: 4.5, y: -2.5, z: -30 },
         rotation: { x: 0, y: 5.8, z: 0 }
+    },
+    {
+        id: 'floatAway',
+        position: { x: 0, y: -3.5, z: -600 },
+        rotation: { x: 25, y: 2, z: 0 }
     }
 ];
 
@@ -432,9 +437,13 @@ const modelSeventhMove = () => {
     });
 };
 
+const solarSystemGroup = new THREE.Group();
+scene.add(solarSystemGroup);
+
 const starSketch = (p) => {
   const numStars = 500;
   let stars = [];
+  let isAnimating = true;
 
   p.setup = function() {
     p.createCanvas(p.windowWidth, p.windowHeight);
@@ -444,9 +453,49 @@ const starSketch = (p) => {
     for(let i = 0; i < numStars; i++) {
       stars.push(new Star(p.random(p.width), p.random(p.height)));
     }
+
+    setTimeout(() => {
+        loader.load('assets/solar_system.glb', function (gltf) {
+            solarSystem = gltf.scene;
+            solarSystem.position.set(0, -100, -500);
+            solarSystemGroup.add(solarSystem);
+
+            mixerSolarSystem = new THREE.AnimationMixer(solarSystem);
+            if (gltf.animations.length > 0) {
+                console.log(gltf.animations);
+                mixerSolarSystem.clipAction(gltf.animations[0]).play();
+            }
+
+            const solarSystemControls = new OrbitControls(camera, renderer.domElement);
+            solarSystemControls.enableDamping = true;
+            solarSystemControls.dampingFactor = 0.05;
+            solarSystemControls.enableZoom = true;
+            solarSystemControls.zoomSpeed = 1.5;
+            solarSystemControls.autoRotate = false;
+            solarSystemControls.target.set(solarSystem.position.x, solarSystem.position.y, solarSystem.position.z);
+            solarSystemControls.update();
+
+            const updateSolarSystemControls = () => {
+                requestAnimationFrame(updateSolarSystemControls);
+                solarSystemControls.update();
+            };
+            updateSolarSystemControls();
+        });
+
+        document.getElementById('p5-canvas-container').style.display = 'none';
+        document.querySelector('#container3D').style.pointerEvents = "all";
+    }, 10500);
+    setTimeout(() => {
+        astronaut.visible = false;
+    }, 10000);
   }
 
   p.draw = function() {
+    if (!isAnimating) {
+      p.noLoop();
+      return;
+    }
+    
     p.background(0, 50);
     
     const acc = p.map(p.mouseX, 0, p.width, 0.005, 0.2);
@@ -499,16 +548,40 @@ const starSketch = (p) => {
   }
 };
 
-
 document.querySelector('.confirmFourthQuestion').addEventListener('click', () => {
     const answerThirdQuestion = document.getElementById('questionFourthInput');
     if(answerThirdQuestion.value.trim().toLowerCase() == answerThirdQuestion.getAttribute('name').toLowerCase()){
         document.querySelector('.fourthQuestion').style.display = "none";
         document.querySelector('.numberQuestion').style.display = "none";
         modelSeventhMove();
-        document.getElementById('p5-canvas-container').style.display = 'block';
-        new p5(starSketch, document.getElementById('p5-canvas-container'));
+        document.querySelector('.wellDone').style.display = "flex";
     } else {
         answerThirdQuestion.style.borderBottom = "1px solid red";
     }
 });
+
+const modelEighthMove = () => {
+    let findId = arrPositionModel.findIndex((val) => val.id == 'floatAway');
+    let newCoordinates = arrPositionModel[findId];
+    gsap.to(astronaut.position, {
+        x: newCoordinates.position.x,
+        y: newCoordinates.position.y,
+        z: newCoordinates.position.z,
+        duration: 10,
+        ease: 'power2.in'
+    });
+    gsap.to(astronaut.rotation, {
+        x: newCoordinates.rotation.x,
+        y: newCoordinates.rotation.y,
+        z: newCoordinates.rotation.z,
+        duration: 10,
+        ease: 'power2.in'
+    });
+};
+
+document.querySelector('.buttonLetsGo').addEventListener('click', () => {
+    document.querySelector('.wellDone').style.display = "none";
+    document.getElementById('p5-canvas-container').style.display = 'block';
+    new p5(starSketch, document.getElementById('p5-canvas-container'));
+    modelEighthMove();
+})

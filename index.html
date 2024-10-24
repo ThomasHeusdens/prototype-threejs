@@ -41,16 +41,16 @@
 				<div id="containerPlanets"></div>
 				<div class="answerNamePlanets">
 					<div class="firstRow">
-						<input type="text" name="Mercury" class="planet" id="planet1" placeholder="1. guess the planet...">
-						<input type="text" name="Venus" class="planet" id="planet2" placeholder="2. guess the planet...">
-						<input type="text" name="Earth" class="planet" id="planet3" placeholder="3. guess the planet...">
-						<input type="text" name="Mars" class="planet" id="planet4" placeholder="4. guess the planet...">
+						<input type="text" autocomplete="off" name="Mercury" class="planet" id="planet1" placeholder="1. guess the planet...">
+						<input type="text" autocomplete="off" name="Venus" class="planet" id="planet2" placeholder="2. guess the planet...">
+						<input type="text" autocomplete="off" name="Earth" class="planet" id="planet3" placeholder="3. guess the planet...">
+						<input type="text" autocomplete="off" name="Mars" class="planet" id="planet4" placeholder="4. guess the planet...">
 					</div>
 					<div class="secondRow">
-						<input type="text" name="Jupiter" class="planet" id="planet5" placeholder="5. guess the planet...">
-						<input type="text" name="Saturn" class="planet" id="planet6" placeholder="6. guess the planet...">
-						<input type="text" name="Uranus" class="planet" id="planet7" placeholder="7. guess the planet...">
-						<input type="text" name="Neptunus" class="planet" id="planet8" placeholder="8. guess the planet...">
+						<input type="text" autocomplete="off" name="Jupiter" class="planet" id="planet5" placeholder="5. guess the planet...">
+						<input type="text" autocomplete="off" name="Saturn" class="planet" id="planet6" placeholder="6. guess the planet...">
+						<input type="text" autocomplete="off" name="Uranus" class="planet" id="planet7" placeholder="7. guess the planet...">
+						<input type="text" autocomplete="off" name="Neptunus" class="planet" id="planet8" placeholder="8. guess the planet...">
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 				<div class="explanationMessage">
 					<div class="message">
 						<p>
-							We've all heard fascinating facts about our galaxy, but how much do we really know? From the age of the universe to the closest stars, there's so much to explore. Do you know the basics of our galaxy? Get three out of four right to continue.
+							We've all heard fascinating facts about our galaxy, but how much do we really know? From the age of the universe to the closest stars, there's so much to explore. Do you know the basics of our galaxy?
 						</p>
 					</div>
 					<div>
@@ -71,33 +71,43 @@
 				<div class="firstQuestion">
 					<p class="question">Light travels incredibly fast through space, but do you know the approximative speed? Enter the speed of light in kilometers per second.</p>
 					<div class="answer">
-						<input type="text" name="300000" id="questionFirstInput" placeholder="Ex. 2000">
+						<input type="text" autocomplete="off" name="300000" id="questionFirstInput" placeholder="Ex. 2000">
 						<p class="confirmFirstQuestion">CONFIRM</p>
 					</div>
 				</div>
 				<div class="secondQuestion">
 					<p class="question">Stars are grouped into galaxies, and we live in one of them. What is the name of the galaxy that contains our Solar System?</p>
 					<div class="answer">
-						<input type="text" name="The Milky Way" id="questionSecondInput" placeholder="Ex. Andromeda">
+						<input type="text" autocomplete="off" name="The Milky Way" id="questionSecondInput" placeholder="Ex. Andromeda">
 						<p class="confirmSecondQuestion">CONFIRM</p>
 					</div>
 				</div>
 				<div class="thirdQuestion">
 					<p class="question">The universe is incredibly old. Can you guess how many billion years old it is?</p>
 					<div class="answer">
-						<input type="text" name="13.7" id="questionThirdInput" placeholder="Ex. 5.3">
+						<input type="text" autocomplete="off" name="13.7" id="questionThirdInput" placeholder="Ex. 5.3">
 						<p class="confirmThirdQuestion">CONFIRM</p>
 					</div>
 				</div>
 				<div class="fourthQuestion">
 					<p class="question">Besides the Sun, there is a star that is the closest to Earth. What is the name of this nearest star?</p>
 					<div class="answer">
-						<input type="text" name="Proxima Centauri" id="questionFourthInput" placeholder="Ex. Sirius">
+						<input type="text" autocomplete="off" name="Proxima Centauri" id="questionFourthInput" placeholder="Ex. Sirius">
 						<p class="confirmFourthQuestion">CONFIRM</p>
 					</div>
 				</div>
 			</div>
 			<div id="p5-canvas-container" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; display: none;">
+			</div>
+			<div class="structureMessage">
+				<div class="wellDone">
+					<div class="messageWellDone">
+						<p>Well done! You're a true astronaut. I think you're ready for the big step. Be prepared, you're going on a long trip at light speed level!</p>
+					</div>
+					<div>
+						<p class="buttonLetsGo">LET'S GO</p>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="container3D"></div>

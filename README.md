@@ -8,7 +8,9 @@ Model Jupiter: https://sketchfab.com/3d-models/jupiter-free-downloadable-model-6
 Model Saturn: https://sketchfab.com/3d-models/saturn-planet-9ab1eb3bb97f4e4a9305c0aae2d280a6
 Model Uranus: https://sketchfab.com/3d-models/space-object-003-gas-giant-e336177e42994065802a874fe79546eb
 Model Neptunus: https://sketchfab.com/3d-models/gas-giant-blue-6df8616351a94ec598da8f57cf1b8b81#download
-Model Solar System: https://sketchfab.com/3d-models/orrery-44849150982d4c228fca951a66df604f
-LightSpeed effect: https://www.youtube.com/watch?v=p0I5bNVcYP8&ab_channel=BarneyCodes
+Model Solar System: https://sketchfab.com/3d-models/solar-system-animation-b7c69a6b655b47c99f871d5ec5aee854#download
+LightSpeed effect: https://www.youtube.com/watch?v=p0I5bNVcYP8&ab_channel=BarneyCodes / https://editor.p5js.org/BarneyCodes/sketches/xR5Ct8F1N
 Display Astronaut: https://www.youtube.com/watch?v=zNXQS2DfckU&ab_channel=LunDev
 Move in a scene (zoom and rotate): https://www.youtube.com/watch?v=vuA3qG15JfI&ab_channel=FunOfHeuristic
+OrbitControls: https://threejs.org/docs/#examples/en/controls/OrbitControls
+Rotate and zoom in only for the group: https://threejs.org/docs/#api/en/objects/Group

@@ -198,20 +198,20 @@ body, html {
     outline: none;
 }
 
-.qna{
+.qna, .structureMessage{
     margin: 0 120px;
     display: flex;
     justify-content: center;
 }
 
-.explanationMessage{
+.explanationMessage, .wellDone{
     display: none;
     align-items: flex-end;
     flex-direction: column;
     width: 35%;
 }
 
-.message{
+.message, .messageWellDone{
     color: white;
     font-size: 15px;
     font-weight: 300;
@@ -229,6 +229,23 @@ p.buttonOk{
 }
 
 p.buttonOk:hover{
+    cursor: pointer;
+    background-color: rgb(11, 11, 51);
+    border: rgb(11, 11, 51) 2px solid;
+}
+
+p.buttonLetsGo{
+    color: white;
+    width: auto;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: white 2px solid;
+    border-radius: 50px;    
+    display: inline-block;
+}
+
+p.buttonLetsGo:hover{
     cursor: pointer;
     background-color: rgb(11, 11, 51);
     border: rgb(11, 11, 51) 2px solid;
