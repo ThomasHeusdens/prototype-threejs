@@ -16,3 +16,4 @@ Move in a scene (zoom and rotate): https://www.youtube.com/watch?v=vuA3qG15JfI&a
 OrbitControls: https://threejs.org/docs/#examples/en/controls/OrbitControls
 Rotate and zoom in only for the group: https://threejs.org/docs/#api/en/objects/Group
 Autocomplete off: https://gist.github.com/niksumeiko/360164708c3b326bd1c8?permalink_comment_id=3793032
+Let user upload a glb file and display it: https://stackoverflow.com/questions/54723900/three-js-let-user-upload-gltf-glb-3d-model / https://gltf-viewer.donmccurdy.com/ / https://github.com/donmccurdy/three-gltf-viewer
