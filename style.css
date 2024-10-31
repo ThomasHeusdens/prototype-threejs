@@ -20,6 +20,21 @@ body, html {
     z-index: 102; 
 }
 
+#containerRoom3D {
+    position: fixed;
+    inset: 0;
+    margin: 0;
+}
+
+#resetButton{
+    display: none;
+    position: absolute;
+    bottom: 50px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    padding: 10px 20px;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -47,6 +62,7 @@ body, html {
 .container {
     position: relative;
     z-index: 1; 
+    height: 100%;
 }
 
 .logo{
