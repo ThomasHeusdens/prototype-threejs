@@ -98,7 +98,7 @@ const planetRadioButtons = document.querySelectorAll("input[name='planet']");
 planetRadioButtons.forEach(button => {
     button.addEventListener("change", (event) => {
         const planetName = event.target.value;
-        if (planetName !== "none") {
+        if (planetName != "none") {
             const url = `assets/${planetName}.glb`; 
             loadModel(url);
         } else if (currentModel) {
