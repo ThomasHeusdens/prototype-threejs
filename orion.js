@@ -281,3 +281,7 @@ requestAnimationFrame(function animate() {
     controls.update();
     renderer.render(scene, camera);
 });
+
+document.querySelector('.closeButton').addEventListener('click', () => {
+    document.querySelector('.explanationOrion').style.display = 'none';
+})
