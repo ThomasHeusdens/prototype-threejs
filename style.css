@@ -484,3 +484,76 @@ p.confirmFourthQuestion:hover{
     top: 240px;
     z-index: 2;
 }
+
+.custom-file-input {
+    appearance: none;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+    width: 125px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.custom-file-input::before {
+    content: 'Browse Files';
+    display: inline-block;
+    color: white;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.custom-file-input:hover::before {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
+
+.controls {
+    position: absolute;
+    top: 195px;
+    right: 120px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.controls label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+}
+
+.choosePlanet{
+    z-index: 3;
+    position: relative;
+    pointer-events: auto;
+    margin: 145px 120px;
+    max-width: 181px;
+}
+
+.choosePlanet input {
+    margin: 5px;
+}
+
+.choosePlanet fieldset{
+    z-index: 2;
+    color: white;
+    border-radius: 8px;
+}

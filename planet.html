@@ -29,10 +29,64 @@
                 </div>     
             </div>
             <div class="uploadFile">
-                <input type="file" id="file-input" accept=".glb, .gltf" />
-                <label for="file-input">Upload 3D Model</label>
+                <input type="file" id="file-input" accept=".glb, .gltf" class="custom-file-input"/>
                 <div id="viewer"></div>
             </div>
+            <div class="controls">
+                <label>
+                    <input type="checkbox" id="ambient-light-toggle" checked>
+                    Ambient Light
+                </label>
+                <label>
+                    <input type="checkbox" id="directional-light-toggle" checked>
+                    Directional Light
+                </label>
+                <label>
+                    <input type="checkbox" id="grid-toggle" checked> 
+                    Show Grid
+                </label>
+            </div>  
+            <div class="choosePlanet">
+                <fieldset>
+                    <legend>Or choose a planet:</legend>
+                    <div>
+                        <input type="radio" id="none" name="planet" value="none" checked />
+                        <label for="none">none</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="mercury" name="planet" value="mercury"  />
+                      <label for="mercury">mercury</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="venus" name="planet" value="venus" />
+                      <label for="venus">venus</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="earth" name="planet" value="earth" />
+                      <label for="earth">earth</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="mars" name="planet" value="mars" />
+                        <label for="mars">mars</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="jupiter" name="planet" value="jupiter" />
+                        <label for="jupiter">jupiter</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="saturn" name="planet" value="saturn" />
+                        <label for="saturn">saturn</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="uranus" name="planet" value="uranus" />
+                        <label for="uranus">uranus</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="neptunus" name="planet" value="neptune" />
+                        <label for="neptunus">neptunus</label>
+                    </div>
+                  </fieldset>
+            </div>                                
         </div>    
         <script type="module" src="planet.js"></script>
     </body>
