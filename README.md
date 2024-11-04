@@ -36,3 +36,4 @@ This website is designed for educational purposes, providing an interactive way 
 - clikedObject.parent: https://chatgpt.com/share/6723c6ee-b01c-8007-9f73-e5c793acfb7f
 - updateProjectionMatrix: https://threejs.org/docs/#api/en/cameras/PerspectiveCamera.updateProjectionMatrix
 - fieldset: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+- typewriter: https://www.npmjs.com/package/typewriter-effect?activeTab=readme

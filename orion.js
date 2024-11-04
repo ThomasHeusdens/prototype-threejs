@@ -2,6 +2,20 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { gsap } from 'gsap';
+import Typewriter from 'typewriter-effect/dist/core';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const explanationText = document.querySelector('.explanationOrion p');
+    
+    if (explanationText) {
+        new Typewriter(explanationText, {
+            loop: false,
+            delay: 20,
+        })
+        .typeString("Orion's constellation is one of the most known constellations. Its distinctive shape, resembling a hunter, is easily recognizable in the night sky. Orion is home to some of the brightest stars, including Betelgeuse, a red supergiant, and Rigel, a blue supergiant. The constellation also contains the Orion Nebula, one of the most studied star-forming regions in the universe, visible even with the naked eye. Ancient civilizations revered Orion, linking it to mythology and navigation, and today, it remains a central figure in both astronomy and cultural lore. Its visibility across both hemispheres makes it one of the most important constellations for stargazers around the world. Don't forget to click on the star you want to discover!")
+        .start();
+    }
+});
 
 let camera, scene, renderer, controls;
 let bellatrix, betegeuse, alnitak, alnilam, mintaka, rigel, saiph;

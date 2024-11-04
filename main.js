@@ -1,8 +1,25 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
 import { gsap } from 'gsap';
+import Typewriter from 'typewriter-effect/dist/core';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const explanationText = document.querySelector('.home h1');
+    
+    if (explanationText) {
+        new Typewriter(explanationText, {
+            loop: false,
+            delay: 50,
+        })
+        .typeString("Unveil the wonders of the universe one")
+        .typeString(" star")
+        .pauseFor(500)
+        .deleteChars(4)
+        .typeString("question at a time")
+        .start();
+    }
+});
 
 const camera = new THREE.PerspectiveCamera(
     10,
@@ -300,6 +317,16 @@ planetsInput.forEach(planet => {
             neptunus.visible = false;
             modelSecondMove();
             document.querySelector('.explanationMessage').style.display = "flex";
+            const explanationText = document.querySelector('.message p');
+    
+            if (explanationText) {
+                new Typewriter(explanationText, {
+                    loop: false,
+                    delay: 30,
+                })
+                .typeString("We've all heard fascinating facts about our galaxy, but how much do we really know? From the age of the universe to the closest stars, there's so much to explore. Do you know the basics of our galaxy?")
+                .start();
+            }
         }
     });
 });
@@ -491,9 +518,19 @@ const starSketch = (p) => {
         document.querySelector('#container3D').style.pointerEvents = "all";
         document.querySelector('.nav').style.display = "none";
         document.querySelector('.structureExplanation').style.display = "flex";
+        const explanationText = document.querySelector('.explanationSolarSystem p');
+    
+        if (explanationText) {
+            new Typewriter(explanationText, {
+                loop: false,
+                delay: 30,
+            })
+            .typeString("Wow! You've traveled so far that you can see the entire solar system. Feel free to explore it with your mouse: drag to rotate using the left click, zoom with the middle click by scrolling, and move the solar system with the right click. Have fun! (Refresh the page to go back)")
+            .start();
+        }
         setTimeout(() => {
             document.querySelector('.structureExplanation').style.display = "none";
-        }, 10000);
+        }, 15000);
     }, 10100);
     setTimeout(() => {
         astronaut.visible = false;
@@ -565,6 +602,16 @@ document.querySelector('.confirmFourthQuestion').addEventListener('click', () =>
         document.querySelector('.numberQuestion').style.display = "none";
         modelSeventhMove();
         document.querySelector('.wellDone').style.display = "flex";
+        const explanationText = document.querySelector('.messageWellDone p');
+    
+        if (explanationText) {
+            new Typewriter(explanationText, {
+                loop: false,
+                delay: 30,
+            })
+            .typeString("Well done! You're a true astronaut. I think you're ready for the big step. Be prepared, you're going on a long trip at light speed level!")
+            .start();
+        }
     } else {
         answerThirdQuestion.style.borderBottom = "1px solid red";
     }
